@@ -1,12 +1,17 @@
-const express = require('express')
-const app = express()
-const port = 2021
+const express = require('express'),
+  app = express(),
+  bodyParser = require('body-parser');
+  port = process.env.PORT || 2021;
 
-app.get('/', (req, res) => {
-  res.send('Halo Dunia!')
-})
+var ctrl = require('./controller.js');
 
 app.listen(port, () => {
-	let log = 'Serverku sedang berjalan pada '
-  	console.log(log+ 'http://localhost:'+port)
+ 	let log = 'Serverku sedang berjalan pada '
+	console.log(log+ 'http://localhost:'+port)
 })
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var routes = require('./router.js'); 
+routes(app)

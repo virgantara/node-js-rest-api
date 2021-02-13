@@ -1,0 +1,10 @@
+{
+	"host": "localhost",
+	"port": 3306,
+	"database": "db_tutorial_nodejs",
+	"user": "root",
+	"password": "4Dm1n_2020",
+	"connectionLimit": 10,
+	"dateStrings": "true"
+	
+}
